@@ -49,16 +49,14 @@ This project analyzes the Uber Fares Dataset using Python and Power BI to explor
 > 📷 Below are the screenshots and visual evidence of various stages of the project:
 
 1. **Data Cleaning Process**  
-   ![Data Cleaning](images/eda_visualizations/data_cleaning.png)
 
 2. **Exploratory Analysis**  
-   ![Fare Distribution](images/eda_visualizations/fare_distribution.png)
 
 3. **Feature Engineering**  
-   ![Datetime Features](images/eda_visualizations/datetime_features.png)
 
-4. **Dashboard Building**  
-   ![Dashboard Screenshot](images/dashboard_screenshots/dashboard_building.png)
+4. **Dashboard Building**
+   
+<img width="1167" height="666" alt="image" src="https://github.com/user-attachments/assets/0c4d9b13-5ddb-492d-aa3a-8c9e4a7e71b9" />
 
 ---
 
