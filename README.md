@@ -15,7 +15,7 @@ This project analyzes the Uber Fares Dataset using Python and Power BI to explor
 
 ## 📌 Project Overview
 
-- **Dataset Source:** [Uber Fares Dataset - Kaggle](https://www.kaggle.com/) 
+- **Dataset Source:** [Uber Fares Dataset - Kaggle](https://www.kaggle.com/datasets/yasserh/uber-fares-dataset) 
 - **Tools Used:** Python (Pandas), Power BI Desktop
 - **Objective:** Gain insights into fare patterns, time trends, and ride behaviors using data analysis and visual storytelling.
 
