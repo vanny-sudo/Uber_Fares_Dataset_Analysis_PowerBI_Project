@@ -109,10 +109,10 @@ df['distance_km'] = df.apply(calculate_distance, axis=1)
 print(df[['fare_amount', 'hour', 'weekday', 'is_peak', 'distance_km']].head())
 
 ```
-<img width="960" height="414" alt="image" src="https://github.com/user-attachments/assets/456fafc2-1cdf-4a36-bc14-0d6d5e60a38a" />
+
+<img width="547" height="335" alt="image" src="https://github.com/user-attachments/assets/10c44309-2039-4f06-a298-e9d7b1f89990" />
 
 <img width="539" height="248" alt="image" src="https://github.com/user-attachments/assets/6933961b-635d-4542-89da-1885a5577fe0" />
-
 
 **output**
 
