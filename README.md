@@ -53,7 +53,7 @@ This project analyzes the Uber Fares Dataset using Python and Power BI to explor
 
 1. **Data Cleaning Process**
 
-```sql
+```python
 
 # Check for missing values
 print(df.isnull().sum())
@@ -84,7 +84,7 @@ print("Shape after cleaning:", df.shape)
 
 2. **Exploratory Analysis**
 
-```sql
+```python
 
 from geopy.distance import geodesic
 
