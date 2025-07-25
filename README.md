@@ -4,7 +4,7 @@
 
 **Names:** Irakoze Grace Vanny  
 **ID:** 26425
-
+**Group:** E
 **Course:** Introduction to Big Data Analytic-INSY 8413
 
 ## 📌 Introduction.
@@ -24,8 +24,8 @@ This project analyzes the Uber Fares Dataset using Python and Power BI to explor
 
 ### 1. Data Understanding & Preparation
 - Loaded raw data using Pandas
-- Assessed data quality, types, and structure
-- Cleaned dataset (handled missing values, outliers, and format issues)
+- Assessed data quality, types and structure
+- Cleaned dataset (handled missing values, outliers and format issues)
 
 ### 2. Exploratory Data Analysis (EDA)
 - Visualized fare distribution
@@ -46,7 +46,7 @@ This project analyzes the Uber Fares Dataset using Python and Power BI to explor
 
 ## 🖼️ All Results Images
 
-> 📷 Below are the screenshots and visual evidence of various stages of the project:
+> 📷 Below are the screenshots and visual evidences of various stages of my project:
 
 1. **Data Cleaning Process**
 
@@ -70,16 +70,13 @@ df = df[(df['pickup_latitude'].between(40, 42)) &
 
 print("Shape after cleaning:", df.shape)
 
-
-<img width="959" height="503" alt="image" src="https://github.com/user-attachments/assets/83b3f65b-ed28-46b6-a53d-ee24b7711bea" />
-
 ```
    
-   <img width="960" height="504" alt="image" src="https://github.com/user-attachments/assets/56f701b5-a91a-4893-a734-bc1f4479797a" />
+<img width="960" height="504" alt="image" src="https://github.com/user-attachments/assets/56f701b5-a91a-4893-a734-bc1f4479797a" />
 
 **. Output**
 
-   <img width="959" height="503" alt="image" src="https://github.com/user-attachments/assets/5746a11e-a60e-40d5-83a2-d28ea712d78c" />
+<img width="959" height="503" alt="image" src="https://github.com/user-attachments/assets/5746a11e-a60e-40d5-83a2-d28ea712d78c" />
 
 
 3. **Exploratory Analysis**
@@ -113,7 +110,7 @@ print(df[['fare_amount', 'hour', 'weekday', 'is_peak', 'distance_km']].head())
 
 ```
 
-   <img width="959" height="503" alt="image" src="https://github.com/user-attachments/assets/831546ba-caf2-409e-add7-47caa0836147" />
+<img width="959" height="503" alt="image" src="https://github.com/user-attachments/assets/831546ba-caf2-409e-add7-47caa0836147" />
 
 **output**
 
