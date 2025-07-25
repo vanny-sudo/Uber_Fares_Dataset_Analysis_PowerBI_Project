@@ -48,23 +48,114 @@ This project analyzes the Uber Fares Dataset using Python and Power BI to explor
 
 > 📷 Below are the screenshots and visual evidence of various stages of the project:
 
-1. **Data Cleaning Process**  
+1. **Data Cleaning Process**
 
-2. **Exploratory Analysis**  
+```sql
 
-3. **Feature Engineering**  
+# Check for missing values
+print(df.isnull().sum())
 
-4. **Dashboard Building**
+# Drop rows with missing key values
+df.dropna(subset=['pickup_datetime', 'pickup_latitude', 'pickup_longitude',
+                  'dropoff_latitude', 'dropoff_longitude', 'fare_amount'], inplace=True)
+
+# Remove rows with invalid fare amounts
+df = df[(df['fare_amount'] > 0) & (df['fare_amount'] < 1000)]
+
+# Filter latitude and longitude (NYC bounds as rough check)
+df = df[(df['pickup_latitude'].between(40, 42)) & 
+        (df['pickup_longitude'].between(-75, -72)) &
+        (df['dropoff_latitude'].between(40, 42)) &
+        (df['dropoff_longitude'].between(-75, -72))]
+
+print("Shape after cleaning:", df.shape)
+
+
+<img width="959" height="503" alt="image" src="https://github.com/user-attachments/assets/83b3f65b-ed28-46b6-a53d-ee24b7711bea" />
+
+```
    
-<img width="1167" height="666" alt="image" src="https://github.com/user-attachments/assets/0c4d9b13-5ddb-492d-aa3a-8c9e4a7e71b9" />
+   <img width="960" height="504" alt="image" src="https://github.com/user-attachments/assets/56f701b5-a91a-4893-a734-bc1f4479797a" />
+
+**. Output**
+
+   <img width="959" height="503" alt="image" src="https://github.com/user-attachments/assets/5746a11e-a60e-40d5-83a2-d28ea712d78c" />
+
+
+3. **Exploratory Analysis**
+
+```sql
+
+from geopy.distance import geodesic
+
+# Convert pickup_datetime to datetime
+df['pickup_datetime'] = pd.to_datetime(df['pickup_datetime'])
+
+# Extract temporal features
+df['hour'] = df['pickup_datetime'].dt.hour
+df['day'] = df['pickup_datetime'].dt.day
+df['month'] = df['pickup_datetime'].dt.month
+df['weekday'] = df['pickup_datetime'].dt.day_name()
+df['year'] = df['pickup_datetime'].dt.year
+
+# Peak hours (7-9 AM or 5-7 PM)
+df['is_peak'] = df['hour'].apply(lambda x: 1 if 7 <= x <= 9 or 17 <= x <= 19 else 0)
+
+# Calculate distance (in km)
+def calculate_distance(row):
+    pickup = (row['pickup_latitude'], row['pickup_longitude'])
+    dropoff = (row['dropoff_latitude'], row['dropoff_longitude'])
+    return geodesic(pickup, dropoff).km
+
+df['distance_km'] = df.apply(calculate_distance, axis=1)
+
+print(df[['fare_amount', 'hour', 'weekday', 'is_peak', 'distance_km']].head())
+
+```
+
+   <img width="959" height="503" alt="image" src="https://github.com/user-attachments/assets/831546ba-caf2-409e-add7-47caa0836147" />
+
+**output**
+
+<img width="960" height="504" alt="image" src="https://github.com/user-attachments/assets/82c32aab-3a77-481d-8020-7babc0bae0f3" />
+
+5. **Dashboard Building using Power BI**
+
+📊 1. Fare Distribution
+
+Insight: Understand how most fares are distributed (e.g., most below $20)
+
+📊 2. Fare vs Distance
+
+Insight: Are longer rides always more expensive? Any anomalies?
+
+📊 3. Fare vs Time of Day
+
+Insight: Identify expensive hours of the day (e.g., peak hours)
+
+📊 4. Rides by Day of Week
+
+Insight: See ride trends across the week
+
+📊 5. Monthly Ride Trends
+
+Insight: Understand seasonal patterns
+
+📊 6. Peak vs Off-Peak Analysis
+
+Insight: Compare demand and fare between peak and non-peak hours
+
+📊 7. Map of Pickup Locations
+
+Insight: Identify popular pickup zones
 
 ---
 
 ## 📊 Final Project Dashboard
 
-Click the link below to access the **My Interactive Power BI dashboard** showcasing the final analysis and insights:
+**My Interactive Power BI dashboard** showcasing the final analysis and insights:
 
-👉 [Click here to view the dashboard](https://your_dashboard_link_here)
+👉 <img width="960" height="503" alt="image" src="https://github.com/user-attachments/assets/c6941f76-0765-4c0b-8130-a1502dec256c" />
 
 ---
 
