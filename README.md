@@ -82,7 +82,7 @@ print("Shape after cleaning:", df.shape)
 <img width="959" height="503" alt="image" src="https://github.com/user-attachments/assets/5746a11e-a60e-40d5-83a2-d28ea712d78c" />
 
 
-3. **Exploratory Analysis**
+2. **Exploratory Analysis**
 
 ```sql
 
@@ -121,7 +121,7 @@ print(df[['fare_amount', 'hour', 'weekday', 'is_peak', 'distance_km']].head())
 
 <img width="960" height="504" alt="image" src="https://github.com/user-attachments/assets/82c32aab-3a77-481d-8020-7babc0bae0f3" />
 
-5. **Dashboard Building using Power BI**
+3. **Dashboard Building using Power BI**
 
 📊 1. Fare Distribution
 
